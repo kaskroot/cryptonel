@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="termsOfService"></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../static/js/translations.js"></script>
+    <script src="../static/js/language.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFB800',
+                        'gold-hover': '#FFD700',
+                        dark: {
+                            bg: '#0D0D0F',
+                            'card': '#18181B',
+                            'border': '#27272A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern Design Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0F0F11;
+            color: #E5E7EB;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #FFD700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #FFD700;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: #FFD700;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #9CA3AF;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+            color: #9CA3AF;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(15, 15, 17, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+        }
+
+        .logo span {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Content Section */
+        .content-section {
+            margin-top: 5rem;
+            background: rgba(26, 26, 29, 0.5);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Terms Section */
+        .terms-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .terms-section h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section i {
+            color: #FFD700;
+            font-size: 1.25rem;
+        }
+
+        /* Back to Home Button */
+        .back-to-home {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            color: #000;
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Last Updated Text */
+        .last-updated {
+            text-align: center;
+            color: #6B7280;
+            font-size: 0.875rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            h3 {
+                font-size: 1.125rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .terms-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-300" oncontextmenu="return false">
+    <nav class="fixed w-full z-50 bg-dark-bg/80 backdrop-blur-lg border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3">
+                <img src="../static/images/logo.png" alt="Cryptonel" class="w-10 h-10 rounded-full">
+                <span class="text-xl font-bold bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent">Cryptonel</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-section">
+            <div class="flex items-center mb-8">
+                <a href="../index.html" class="flex items-center space-x-2 text-gray-300 hover:text-gold transition-all duration-300">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back</span>
+                </a>
+            </div>
+            
+            <h1 class="text-4xl font-bold mb-8">Terms of Service</h1>
+            
+            <div class="terms-content">
+                <div class="terms-section">
+                    <h2><i class="fas fa-file-contract"></i> Agreement</h2>
+                    <p>By using our Discord bot, you agree to these Terms of Service. Please read them carefully.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-user-check"></i> Eligibility</h2>
+                    <p>You must be at least 13 years old to use our services. By using our services, you confirm that you meet this requirement.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-shield-alt"></i> User Responsibilities</h2>
+                    <p>Users are responsible for maintaining the security of their accounts and complying with Discord's Terms of Service.</p>
+                    <ul>
+                        <li>Do not abuse or exploit our services</li>
+                        <li>Respect other users and their privacy</li>
+                        <li>Do not attempt to manipulate or disrupt our services</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Limitations</h2>
+                    <p>We are not responsible for any losses or damages caused by our services.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-ban"></i> Termination</h2>
+                    <p>We reserve the right to terminate or suspend your access to our services at any time.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-edit"></i> Changes to Terms</h2>
+                    <p>We may update these Terms of Service at any time. It is your responsibility to review them regularly.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="last-updated" data-i18n="lastUpdated"></p>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Disable Developer Tools and Keyboard Shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, F12
+            if (
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                (e.keyCode === 123)
+            ) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Prevent Ctrl+U (View Source)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Prevent Ctrl+S (Save Page)
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Prevent Ctrl+C, Ctrl+V, Ctrl+X (Copy, Paste, Cut)
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 88)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable Right Click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Prevent text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional Protection
+        (function() {
+            // Detect Developer Tools
+            var devtools = {
+                isOpen: false,
+                orientation: undefined
+            };
+
+            var threshold = 160;
+            var emitEvent = function(isOpen, orientation) {
+                window.dispatchEvent(new CustomEvent('devtoolschange', {
+                    detail: {
+                        isOpen: isOpen,
+                        orientation: orientation
+                    }
+                }));
+            };
+
+            setInterval(function() {
+                var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                var orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+                if (!(heightThreshold && widthThreshold) && ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+                    if (!devtools.isOpen || devtools.orientation !== orientation) {
+                        emitEvent(true, orientation);
+                    }
+                    devtools.isOpen = true;
+                    devtools.orientation = orientation;
+                } else {
+                    if (devtools.isOpen) {
+                        emitEvent(false, undefined);
+                    }
+                    devtools.isOpen = false;
+                    devtools.orientation = undefined;
+                }
+            }, 500);
+
+            window.devtools = devtools;
+        })();
+
+        // Clear console
+        console.clear();
+        // Disable console
+        console.log = console.warn = console.error = function() {};
+    </script>
+</body>
+</html>

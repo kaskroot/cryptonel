@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cryptonel</title>
+    <link rel="icon" type="image/png" href="static/images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="static/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="static/js/translations.js"></script>
+    <script src="static/js/language.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFB800',
+                        'gold-hover': '#FFD700',
+                        dark: {
+                            bg: '#0D0D0F',
+                            'card': '#18181B',
+                            'border': '#27272A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"SF Pro Display"', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-50 font-sans min-h-screen bg-dark-bg">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark-bg/80 backdrop-blur-lg border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-3 group">
+                        <img src="static/images/logo.png" alt="Cryptonel" class="w-10 h-10 rounded-full transform transition-all duration-300 group-hover:scale-110">
+                        <span class="text-xl font-bold bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent transform transition-all duration-300 group-hover:translate-x-1" data-i18n="cryptonel">Cryptonel</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-300 hover:text-gold transition-all duration-300">Features</a>
+                    <a href="#why-choose-us" class="text-gray-300 hover:text-gold transition-all duration-300">Why Choose Us</a>
+                    <a href="#about" class="text-gray-300 hover:text-gold transition-all duration-300">About</a>
+                    <a href="#contact" class="text-gray-300 hover:text-gold transition-all duration-300">Contact</a>
+                    <a href="#" onclick="joinSupport()" class="px-6 py-2 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-full transition-all duration-300 hover:translate-y-[-2px] hover:scale-105 hover:shadow-lg hover:shadow-gold/30">Support Server</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden flex justify-center w-8 h-8 bg-[#1A1A1D] rounded-full hover:bg-[#27272A] transition-all">
+                    <i class="fas fa-bars text-lg text-gray-300"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-[#1A1A1D] z-50 p-4">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 w-8 h-8 bg-[#1A1A1D] rounded-full hover:bg-[#27272A] transition-all">
+            <i class="fas fa-times text-lg text-gray-300"></i>
+        </button>
+        <nav class="flex flex-col space-y-6 mt-12">
+            <a href="#features" class="text-gray-300 hover:text-gold transition-colors duration-300" data-i18n="features">Features</a>
+            <a href="#why-choose-us" class="text-gray-300 hover:text-gold transition-colors duration-300" data-i18n="whyChooseUs">Why Choose Us</a>
+            <a href="#about" class="text-gray-300 hover:text-gold transition-colors duration-300" data-i18n="about">About</a>
+            <a href="#contact" class="text-gray-300 hover:text-gold transition-colors duration-300" data-i18n="contact">Contact</a>
+        </nav>
+    </div>
+
+    <div class="min-h-screen flex flex-col pt-16">
+        <!-- Hero Section -->
+        <main class="flex-1">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="particle-container"></div>
+                <div class="text-center" data-aos="fade-up">
+                    <div class="mb-8 relative">
+                        <div class="absolute inset-0 bg-gradient-to-b from-gold/10 to-transparent rounded-full filter blur-3xl neon-glow"></div>
+                        <div class="w-24 h-24 bg-[#1E1E1E] rounded-full mx-auto flex items-center justify-center animate-float relative glass-effect">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-full animate-spin-slow"></div>
+                            <img src="static/images/logo.png" alt="Cryptonel" class="w-16 h-16 relative z-10">
+                        </div>
+                    </div>
+                    <h1 class="text-6xl font-bold mb-6 text-animate animate__animated animate__fadeIn relative">
+                        <span class="relative z-10" data-i18n="cryptonelBot">Cryptonel Bot</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent filter blur-2xl"></div>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto animate__animated animate__fadeIn">
+                        <span data-i18n="heroDescription">Your ultimate Discord companion for cryptocurrency management and tracking.</span>
+                        <br>
+                        <span data-i18n="heroSubDescription">Powerful features, seamless integration, and real-time updates.</span>
+                    </p>
+                    <div class="flex justify-center space-x-4 animate__animated animate__fadeIn">
+                        <a href="#" onclick="addToDiscord()" class="magnetic-button btn-hover-effect px-8 py-3 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-gold/30 relative overflow-hidden">
+                            <span class="relative z-10" data-i18n="addToDiscord">Add to Discord</span>
+                        </a>
+                        <a href="#" onclick="joinSupport()" class="magnetic-button btn-hover-effect px-8 py-3 bg-black/30 text-gold border-2 border-gold font-semibold rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-gold/30 relative overflow-hidden glass-effect">
+                            <span class="relative z-10" data-i18n="supportServer">Support Server</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <section id="features" class="mt-24">
+                    <h2 class="text-5xl font-bold text-center mb-16 gradient-text animate__animated animate__fadeIn" data-aos="fade-down">
+                        <span data-i18n="powerfulFeatures">Powerful Features</span>
+                        <div class="w-24 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                        <!-- Security -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800">
+                            <div class="feature-card bg-gradient-to-br from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-shield-alt text-2xl text-gold group-hover:animate-pulse"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="security">Security</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="securityDesc">Advanced protection features to keep your server secure.</p>
+                            </div>
+                        </div>
+
+                        <!-- Automod -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                            <div class="feature-card bg-gradient-to-bl from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[-8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-robot text-2xl text-gold group-hover:animate-bounce"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="automod">Automod</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="automodDesc">Automated moderation to maintain server cleanliness.</p>
+                            </div>
+                        </div>
+
+                        <!-- Utility -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature-card bg-gradient-to-tr from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-wrench text-2xl text-gold group-hover:animate-spin-slow"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="utility">Utility</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="utilityDesc">Essential commands for server management.</p>
+                            </div>
+                        </div>
+
+                        <!-- Moderation -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                            <div class="feature-card bg-gradient-to-br from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-gavel text-2xl text-gold group-hover:animate-pulse"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="moderation">Moderation</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="moderationDesc">Powerful tools for effective server control.</p>
+                            </div>
+                        </div>
+
+                        <!-- Backups -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                            <div class="feature-card bg-gradient-to-bl from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[-8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-database text-2xl text-gold group-hover:animate-bounce"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="backups">Backups</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="backupsDesc">Comprehensive backup system for server safety.</p>
+                            </div>
+                        </div>
+
+                        <!-- Event Logs -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                            <div class="feature-card bg-gradient-to-tr from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-scroll text-2xl text-gold group-hover:animate-spin-slow"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="eventLogs">Event Logs</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="eventLogsDesc">Detailed logging of all server activities.</p>
+                            </div>
+                        </div>
+
+                        <!-- Suggestions -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                            <div class="feature-card bg-gradient-to-br from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-lightbulb text-2xl text-gold group-hover:animate-pulse"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="suggestions">Suggestions</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="suggestionsDesc">Organized system for member suggestions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feedback -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+                            <div class="feature-card bg-gradient-to-bl from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[-8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-comments text-2xl text-gold group-hover:animate-bounce"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="feedback">Feedback</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="feedbackDesc">Efficient feedback management system.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tempvoices -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
+                            <div class="feature-card bg-gradient-to-tr from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-microphone text-2xl text-gold group-hover:animate-spin-slow"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="tempvoices">Tempvoices</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="tempvoicesDesc">Dynamic temporary voice channels.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tickets -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
+                            <div class="feature-card bg-gradient-to-br from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-ticket-alt text-2xl text-gold group-hover:animate-pulse"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="tickets">Tickets</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="ticketsDesc">Professional ticket support system.</p>
+                            </div>
+                        </div>
+
+                        <!-- Giveaways -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
+                            <div class="feature-card bg-gradient-to-bl from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[-8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-gift text-2xl text-gold group-hover:animate-bounce"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="giveaways">Giveaways</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="giveawaysDesc">Engaging giveaway system for members.</p>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio -->
+                        <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1100">
+                            <div class="feature-card bg-gradient-to-tr from-[#1A1A1D] to-[#1f1f23] rounded-[30px] p-8 transition-all duration-700 transform hover:translate-y-[-20px] hover:rotate-[8deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="feature-icon mb-6 group-hover:scale-110 transition-all duration-700">
+                                    <div class="w-16 h-16 bg-black/40 rounded-[20px] flex items-center justify-center group-hover:bg-black/60 transform-gpu group-hover:rotate-[360deg] transition-all duration-700">
+                                        <i class="fas fa-wallet text-2xl text-gold group-hover:animate-spin-slow"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="wallet">Wallet</h3>
+                                <p class="text-gray-400 group-hover:text-gray-300 transition-all duration-500 transform group-hover:translate-x-1" data-i18n="walletDesc">Track and manage your crypto assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Why Choose Us Section -->
+                <section id="why-choose-us" class="py-24">
+                    <h2 class="text-5xl font-bold text-center mb-16 gradient-text animate__animated animate__fadeIn" data-aos="fade-down">
+                        <span data-i18n="whyChooseUs">Why Choose Cryptonel?</span>
+                        <div class="w-24 h-1 bg-gold mx-auto mt-4 rounded-full animate-pulse"></div>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+                        <!-- Secure & Reliable -->
+                        <div class="group" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="bg-[#1A1A1D] rounded-xl p-6 transition-all duration-700 transform hover:translate-y-[-15px] hover:rotate-[5deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-gradient-xy"></div>
+                                <div class="relative transform transition-transform duration-700 group-hover:translate-z-10">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-black/40 w-14 h-14 rounded-xl flex items-center justify-center mr-4 group-hover:bg-black/60 transition-all duration-700 transform group-hover:rotate-[360deg] group-hover:scale-110 hover:shadow-lg hover:shadow-gold/20">
+                                            <i class="fas fa-shield-alt text-2xl text-gold group-hover:animate-pulse"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="secureReliable">Secure & Reliable</h3>
+                                    </div>
+                                    <p class="text-gray-400 text-lg leading-relaxed transform transition-all duration-500 group-hover:translate-x-1 group-hover:text-gray-300" data-i18n="secureReliableDesc">Built with security in mind, ensuring your data is protected and the bot is available 24/7.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fast & Responsive -->
+                        <div class="group" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="bg-[#1A1A1D] rounded-xl p-6 transition-all duration-700 transform hover:translate-y-[-15px] hover:rotate-[-5deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="absolute inset-0 bg-gradient-to-bl from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-gradient-xy"></div>
+                                <div class="relative transform transition-transform duration-700 group-hover:translate-z-10">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-black/40 w-14 h-14 rounded-xl flex items-center justify-center mr-4 group-hover:bg-black/60 transition-all duration-700 transform group-hover:rotate-[360deg] group-hover:scale-110 hover:shadow-lg hover:shadow-gold/20">
+                                            <i class="fas fa-bolt text-2xl text-gold group-hover:animate-bounce"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="fastResponsive">Fast & Responsive</h3>
+                                    </div>
+                                    <p class="text-gray-400 text-lg leading-relaxed transform transition-all duration-500 group-hover:translate-x-1 group-hover:text-gray-300" data-i18n="fastResponsiveDesc">Get instant responses and real-time updates with our optimized performance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Community -->
+                        <div class="group" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="bg-[#1A1A1D] rounded-xl p-6 transition-all duration-700 transform hover:translate-y-[-15px] hover:rotate-[5deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-gradient-xy"></div>
+                                <div class="relative transform transition-transform duration-700 group-hover:translate-z-10">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-black/40 w-14 h-14 rounded-xl flex items-center justify-center mr-4 group-hover:bg-black/60 transition-all duration-700 transform group-hover:rotate-[360deg] group-hover:scale-110 hover:shadow-lg hover:shadow-gold/20">
+                                            <i class="fas fa-users text-2xl text-gold group-hover:animate-wiggle"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="activeCommunity">Active Community</h3>
+                                    </div>
+                                    <p class="text-gray-400 text-lg leading-relaxed transform transition-all duration-500 group-hover:translate-x-1 group-hover:text-gray-300" data-i18n="activeCommunityDesc">Join our growing community of crypto enthusiasts and get support when you need it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Updates -->
+                        <div class="group" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="bg-[#1A1A1D] rounded-xl p-6 transition-all duration-700 transform hover:translate-y-[-15px] hover:rotate-[-5deg] hover:scale-110 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="absolute inset-0 bg-gradient-to-tl from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-gradient-xy"></div>
+                                <div class="relative transform transition-transform duration-700 group-hover:translate-z-10">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-black/40 w-14 h-14 rounded-xl flex items-center justify-center mr-4 group-hover:bg-black/60 transition-all duration-700 transform group-hover:rotate-[360deg] group-hover:scale-110 hover:shadow-lg hover:shadow-gold/20">
+                                            <i class="fas fa-sync-alt text-2xl text-gold group-hover:animate-spin-slow"></i>
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gold transition-all duration-500 transform group-hover:translate-x-2" data-i18n="regularUpdates">Regular Updates</h3>
+                                    </div>
+                                    <p class="text-gray-400 text-lg leading-relaxed transform transition-all duration-500 group-hover:translate-x-1 group-hover:text-gray-300" data-i18n="regularUpdatesDesc">We constantly add new features and improvements based on community feedback.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="py-24">
+                    <h2 class="text-5xl font-bold text-center mb-16 gradient-text animate__animated animate__fadeIn" data-aos="fade-down">
+                        <span data-i18n="aboutCryptonel">About Cryptonel</span>
+                        <div class="w-24 h-1 bg-gold mx-auto mt-4 rounded-full animate-pulse"></div>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+                        <!-- Our Mission -->
+                        <div class="group" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="bg-[#1A1A1D] rounded-xl p-8 transition-all duration-700 transform hover:translate-y-[-15px] hover:rotate-[2deg] hover:scale-105 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-gradient-xy"></div>
+                                <div class="relative transform transition-transform duration-700 group-hover:translate-z-10">
+                                    <div class="bg-black/40 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black/60 transition-all duration-700 transform group-hover:rotate-[360deg] group-hover:scale-110">
+                                        <i class="fas fa-rocket text-3xl text-gold group-hover:animate-bounce"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-all duration-500" data-i18n="ourMission">Our Mission</h3>
+                                    <p class="text-gray-400 text-lg leading-relaxed group-hover:text-gray-300 transition-all duration-500" data-i18n="ourMissionDesc">
+                                        Cryptonel was created to revolutionize Discord server management. Our team of skilled developers works tirelessly to provide powerful moderation, automation, and community engagement tools that make your Discord server thrive.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Key Features -->
+                        <div class="group" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="bg-[#1A1A1D] rounded-xl p-8 transition-all duration-700 transform hover:translate-y-[-15px] hover:rotate-[-2deg] hover:scale-105 hover:shadow-2xl hover:shadow-gold/30 relative overflow-hidden preserve-3d hover:z-10">
+                                <div class="absolute inset-0 bg-gradient-to-bl from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-gradient-xy"></div>
+                                <div class="relative transform transition-transform duration-700 group-hover:translate-z-10">
+                                    <div class="bg-black/40 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black/60 transition-all duration-700 transform group-hover:rotate-[360deg] group-hover:scale-110">
+                                        <i class="fas fa-star text-3xl text-gold group-hover:animate-pulse"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-all duration-500" data-i18n="keyFeatures">Key Features</h3>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center text-gray-400 group-hover:text-gray-300 transition-all duration-500">
+                                            <i class="fas fa-check-circle text-gold mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                            <span data-i18n="advancedModeration">Advanced moderation and auto-moderation</span>
+                                        </li>
+                                        <li class="flex items-center text-gray-400 group-hover:text-gray-300 transition-all duration-500">
+                                            <i class="fas fa-check-circle text-gold mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                            <span data-i18n="customCommands">Custom commands and automation</span>
+                                        </li>
+                                        <li class="flex items-center text-gray-400 group-hover:text-gray-300 transition-all duration-500">
+                                            <i class="fas fa-check-circle text-gold mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                            <span data-i18n="ticketSystem">Ticket system and user support</span>
+                                        </li>
+                                        <li class="flex items-center text-gray-400 group-hover:text-gray-300 transition-all duration-500">
+                                            <i class="fas fa-check-circle text-gold mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                            <span data-i18n="eventManagement">Event management and logging</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="py-24">
+                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-down">
+                        <span data-i18n="contactInformation">Contact Information</span>
+                        <div class="w-24 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+                    </h2>
+
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-[#1A1A1D] p-8 rounded-2xl border border-dark-border" data-aos="fade-up">
+                            <!-- Discord Support -->
+                            <a href="https://discord.gg/3cVdBNQmGh" target="_blank" class="flex items-center mb-8 p-4 bg-black/40 rounded-xl hover:bg-gold/10 transition-all duration-300 group cursor-pointer">
+                                <div class="w-12 h-12 bg-[#5865F2] rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fab fa-discord text-2xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gold mb-1" data-i18n="discordSupport">Discord Support</h3>
+                                    <p class="text-gray-400" data-i18n="discordSupportDesc">Join our Discord server for support</p>
+                                </div>
+                                <i class="fas fa-arrow-right ml-auto text-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"></i>
+                            </a>
+
+                            <!-- Email Support -->
+                            <a href="mailto:support@cryptonel.online" class="flex items-center p-4 bg-black/40 rounded-xl hover:bg-gold/10 transition-all duration-300 group cursor-pointer">
+                                <div class="w-12 h-12 bg-[#FFB800] rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-envelope text-2xl text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gold mb-1" data-i18n="emailSupport">Email Support</h3>
+                                    <p class="text-gray-400" data-i18n="emailSupportDesc">support@cryptonel.online</p>
+                                </div>
+                                <i class="fas fa-arrow-right ml-auto text-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="static/images/logo.png" alt="Cryptonel">
+                    <span data-i18n="cryptonel">Cryptonel</span>
+                </div>
+                <p class="footer-description" data-i18n="footerDescription">
+                    Your trusted cryptocurrency companion on Discord. Making crypto tracking and management simple and efficient.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3 data-i18n="quickLinks">Quick Links</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#features">
+                            <i class="fas fa-chevron-right"></i>
+                            <span data-i18n="features">Features</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#why-choose-us">
+                            <i class="fas fa-chevron-right"></i>
+                            <span data-i18n="whyChooseUs">Why Choose Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about">
+                            <i class="fas fa-chevron-right"></i>
+                            <span data-i18n="about">About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <i class="fas fa-chevron-right"></i>
+                            <span data-i18n="contact">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-section">
+                <h3 data-i18n="legal">Legal</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="templates/terms-of-service.html">
+                            <i class="fas fa-gavel"></i>
+                            <span data-i18n="termsOfService">Terms of Service</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="templates/privacy-policy.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-i18n="privacyPolicy">Privacy Policy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="footer-section">
+                <h3 data-i18n="contactUs">Contact Us</h3>
+                <div class="footer-contact">
+                    <a href="mailto:support@cryptonel.online">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="emailSupportDesc">support@cryptonel.online</span>
+                    </a>
+                    <a href="#" onclick="joinSupport()">
+                        <i class="fab fa-discord"></i>
+                        <span data-i18n="discordSupport">Discord Support</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-i18n="copyright">&copy; 2025 Cryptonel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+
+        async function getSupportServerInvite(event) {
+            event.preventDefault();
+            try {
+                const response = await fetch('http://localhost:3000/api/support-invite');
+                const data = await response.json();
+                if (data.inviteUrl) {
+                    window.open(data.inviteUrl, '_blank');
+                } else {
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                window.location.reload();
+            }
+        }
+    </script>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+
+    <script>
+        // Anti-DevTools with reload prevention
+        (function() {
+            let reloadCount = parseInt(sessionStorage.getItem('reloadCount')) || 0;
+            const MAX_RELOADS = 2;
+
+            // Reset reload count after 5 seconds of page load
+            setTimeout(() => {
+                sessionStorage.setItem('reloadCount', '0');
+            }, 5000);
+
+            // Detect and prevent DevTools opening silently
+            const devtools = {
+                isOpen: false,
+                orientation: undefined
+            };
+
+            const threshold = 160;
+            const emitEvent = (isOpen, orientation) => {
+                window.dispatchEvent(new CustomEvent('devtoolschange', {
+                    detail: {
+                        isOpen: isOpen,
+                        orientation: orientation
+                    }
+                }));
+            };
+
+            setInterval(() => {
+                var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                var orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+                if (
+                    !(heightThreshold && widthThreshold) &&
+                    ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+                ) {
+                    if (!devtools.isOpen || devtools.orientation !== orientation) {
+                        emitEvent(true, orientation);
+                    }
+                    devtools.isOpen = true;
+                    devtools.orientation = orientation;
+                } else {
+                    if (devtools.isOpen) {
+                        emitEvent(false, undefined);
+                    }
+                    devtools.isOpen = false;
+                    devtools.orientation = undefined;
+                }
+            }, 500);
+
+            window.devtools = devtools;
+        })();
+
+        // Clear console
+        console.clear();
+        // Disable console
+        console.log = console.warn = console.error = function() {};
+    </script>
+
+    <script>
+        function addToDiscord() {
+            window.open('https://discord.com/oauth2/authorize?client_id=1286847482692898826&scope=bot&permissions=8', '_blank');
+        }
+    </script>
+
+    <script>
+        function joinSupport() {
+            window.open('https://discord.gg/3cVdBNQmGh', '_blank');
+        }
+    </script>
+
+    <script>
+        // Particle Effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.width = Math.random() * 10 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            return particle;
+        }
+
+        function initParticles() {
+            const container = document.querySelector('.particle-container');
+            setInterval(() => {
+                const particle = createParticle();
+                container.appendChild(particle);
+                setTimeout(() => particle.remove(), 3000);
+            }, 200);
+        }
+
+        // Magnetic Button Effect
+        function initMagneticButtons() {
+            const buttons = document.querySelectorAll('.magnetic-button');
+            buttons.forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    button.style.setProperty('--mx', `${x * 0.1}px`);
+                    button.style.setProperty('--my', `${y * 0.1}px`);
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.style.setProperty('--mx', '0px');
+                    button.style.setProperty('--my', '0px');
+                });
+            });
+        }
+
+        // Initialize effects
+        document.addEventListener('DOMContentLoaded', () => {
+            initParticles();
+            initMagneticButtons();
+        });
+    </script>
+
+    <script>
+        // Disable Developer Tools and Keyboard Shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, F12
+            if (
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                (e.keyCode === 123)
+            ) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Prevent Ctrl+U (View Source)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Prevent Ctrl+S (Save Page)
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Prevent Ctrl+C, Ctrl+V, Ctrl+X (Copy, Paste, Cut)
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 88)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable Right Click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Disable Developer Tools (Alternative Method)
+        setInterval(function() {
+            if (window.devtools.isOpen) {
+                window.location.reload();
+            }
+        }, 1000);
+
+        // Prevent text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional Protection
+        (function() {
+            // Detect Developer Tools
+            var devtools = {
+                isOpen: false,
+                orientation: undefined
+            };
+
+            var threshold = 160;
+            var emitEvent = function(isOpen, orientation) {
+                window.dispatchEvent(new CustomEvent('devtoolschange', {
+                    detail: {
+                        isOpen: isOpen,
+                        orientation: orientation
+                    }
+                }));
+            };
+
+            setInterval(function() {
+                var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                var orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+                if (
+                    !(heightThreshold && widthThreshold) &&
+                    ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+                ) {
+                    if (!devtools.isOpen || devtools.orientation !== orientation) {
+                        emitEvent(true, orientation);
+                    }
+                    devtools.isOpen = true;
+                    devtools.orientation = orientation;
+                } else {
+                    if (devtools.isOpen) {
+                        emitEvent(false, undefined);
+                    }
+                    devtools.isOpen = false;
+                    devtools.orientation = undefined;
+                }
+            }, 500);
+
+            window.devtools = devtools;
+        })();
+
+        // Clear console
+        console.clear();
+        // Disable console
+        console.log = console.warn = console.error = function() {};
+    </script>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="static/images/logo.png" as="image">
+    
+    <!-- Defer Non-Critical CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Optimize JavaScript -->
+    <script>
+        // Use requestAnimationFrame for smooth animations
+        function smoothAnimation(element, properties, duration) {
+            const start = performance.now();
+            const animate = (currentTime) => {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+
+                Object.entries(properties).forEach(([prop, value]) => {
+                    element.style[prop] = value * progress;
+                });
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+            requestAnimationFrame(animate);
+        }
+
+        // Optimize scroll performance
+        let ticking = false;
+        document.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Perform scroll-based animations here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Lazy load images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        });
+    </script>
+</body>
+</html>
