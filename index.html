@@ -132,7 +132,7 @@
                         <span data-i18n="heroSubDescription">Powerful features, seamless integration, and real-time updates.</span>
                     </p>
                     <div class="flex justify-center space-x-4 animate__animated animate__fadeIn">
-                        <a href="#" onclick="addToDiscord()" class="magnetic-button btn-hover-effect px-8 py-3 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-gold/30 relative overflow-hidden">
+                        <a href="/invite" class="magnetic-button btn-hover-effect px-8 py-3 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-gold/30 relative overflow-hidden">
                             <span class="relative z-10" data-i18n="addToDiscord">Add to Discord</span>
                         </a>
                         <a href="#" onclick="joinSupport()" class="magnetic-button btn-hover-effect px-8 py-3 bg-black/30 text-gold border-2 border-gold font-semibold rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-gold/30 relative overflow-hidden glass-effect">
@@ -650,7 +650,7 @@
 
     <script>
         function addToDiscord() {
-            window.open('https://discord.com/oauth2/authorize?client_id=1339264170226356286&scope=bot&permissions=8', '_blank');
+            window.location.href = '/invite';
         }
     </script>
 
