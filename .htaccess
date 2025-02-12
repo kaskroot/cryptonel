@@ -1,16 +1,16 @@
 RewriteEngine On
 
-# إعادة توجيه الروابط القديمة إلى الجديدة
-RewriteRule ^templates/privacy-policy\.html$ /privacy-policy [R=301,L]
-RewriteRule ^templates/terms-of-service\.html$ /terms-of-service [R=301,L]
+# إعادة توجيه الروابط من الجذر إلى مجلد templates
+RewriteRule ^privacy-policy$ templates/privacy-policy.html [L]
+RewriteRule ^terms-of-service$ templates/terms-of-service.html [L]
+
+# إعادة توجيه index.html إلى /
+RewriteRule ^index\.html$ / [R=301,L]
 
 # إزالة .html من نهاية الروابط
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
-
-# إعادة توجيه index.html إلى /
-RewriteRule ^index\.html$ / [R=301,L]
 
 # إزالة / من نهاية الروابط
 RewriteCond %{REQUEST_FILENAME} !-d
